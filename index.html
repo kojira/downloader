@@ -53,6 +53,10 @@
 </head>
 <body>
   <h2>ダウンロードリンク生成</h2>
+  <div class="input-area" id="inputArea">
+    <input type="text" id="urlInput" placeholder="ファイルのURLを入力">
+    <button onclick="generateLink()">リンク作成</button>
+  </div>
 
   <div id="linkArea"></div>
 
@@ -87,6 +91,7 @@
       if (presetUrl) {
         document.getElementById('urlInput').value = presetUrl;
         generateLink();
+        document.getElementById('inputArea').style.display = 'none';
       }
     });
   </script>
