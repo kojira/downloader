@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>urlダウンローダー</title>
+</head>
+<body>
+  <h2>URLからファイルをダウンロード</h2>
+  <input type="text" id="urlInput" placeholder="ここにファイルのURLを入力" style="width: 80%;">
+  <button onclick="startDownload()">ダウンロード</button>
+
+  <script>
+    function startDownload() {
+      const url = document.getElementById("urlInput").value.trim();
+      if (!url) {
+        alert("URLを入力してください");
+        return;
+      }
+
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+  </script>
+</body>
+</html>
